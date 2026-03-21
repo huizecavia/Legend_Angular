@@ -29,6 +29,8 @@
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
     "@angular/router": "^21.1.0",
+    "@contentful/rich-text-html-renderer": "^17.1.6",
+    "@contentful/rich-text-types": "^17.2.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

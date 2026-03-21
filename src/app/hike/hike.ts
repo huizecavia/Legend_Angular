@@ -1,6 +1,7 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { HikeModel, Place } from './hike.model';
 import { HttpClient } from '@angular/common/http';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Component({
   selector: 'app-hike',
@@ -27,6 +28,14 @@ export class Hike {
 
     })
 
+  }
+
+  getBeschrijvingHtml(): string {
+    const hikeData = this.hike();
+    if (hikeData?.beschrijving) {
+      return documentToHtmlString(hikeData.beschrijving);
+    }
+    return '';
   }
 
 }
