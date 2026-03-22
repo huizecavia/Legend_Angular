@@ -19,7 +19,8 @@ export class Hike {
     const subscription = this.httpClient.get<HikeModel>('http://localhost:8080/hike').subscribe({
       next: (resData) => {
         this.hike.set(resData);
-        console.log(resData);
+        console.log(resData.beschrijving);
+        console.log(this.hike)
         
       }
     });
