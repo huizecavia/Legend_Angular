@@ -3,7 +3,8 @@
 <div>
     <p>{{ hike()?.titel}}</p>
     <img src="{{ hike()?.route }}" alt="Route Picture" style="max-width: 100%; height: auto;">
-    <p>{{ hike()?.beschrijving?.content}}</p>
+
+    <p>{{ hike()?.beschrijving}}</p>
     <p>{{ hike()?.datumuitvoering}}</p>
 
     @for (picture of hike()?.pictures; track picture)  {

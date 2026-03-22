@@ -1,0 +1,40 @@
+/* Hello Kitty Cute Style */
+
+body {
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #8B0000;
+  margin: 0;
+  padding: 20px;
+}
+
+div {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #FF69B4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+p {
+  color: #FF1493;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+img {
+  border-radius: 15px;
+  border: 3px solid #FFB6C1;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+div[innerHTML] {
+  background: #FFF0F5;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #FF69B4;
+  color: #DC143C;
+}

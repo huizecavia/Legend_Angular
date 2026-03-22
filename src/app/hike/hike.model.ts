@@ -3,7 +3,7 @@ import { Document } from '@contentful/rich-text-types';
 export interface HikeModel {
       titel: string;
       route: string;
-      beschrijving: Document;
+      beschrijving: string;
       datumuitvoering: string;
       pictures: string[];
 }

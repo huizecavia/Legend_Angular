@@ -19,9 +19,6 @@ export class Hike {
     const subscription = this.httpClient.get<HikeModel>('http://localhost:8080/hike').subscribe({
       next: (resData) => {
         this.hike.set(resData);
-        console.log(resData.beschrijving);
-        console.log(this.hike)
-        
       }
     });
 
@@ -29,14 +26,6 @@ export class Hike {
 
     })
 
-  }
-
-  getBeschrijvingHtml(): string {
-    const hikeData = this.hike();
-    if (hikeData?.beschrijving) {
-      return documentToHtmlString(hikeData.beschrijving);
-    }
-    return '';
   }
 
 }
