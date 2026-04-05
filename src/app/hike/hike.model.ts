@@ -2,7 +2,7 @@ import { Document } from '@contentful/rich-text-types';
 
 export interface HikeModel {
       titel: string;
-      route: string;
+      routes: string[];
       beschrijving: string;
       datumuitvoering: string;
       pictures: string[];

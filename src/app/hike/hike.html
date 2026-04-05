@@ -1,14 +1,19 @@
 <p>Here comes the hike!</p>
 
 <div>
-    <p>{{ hike()?.titel}}</p>
-    <img src="{{ hike()?.route }}" alt="Route Picture" style="max-width: 100%; height: auto;">
+    @for (hike of hikes(); track hike)  {
+        <p>{{ hike.titel}}</p>
 
-    <p>{{ hike()?.beschrijving}}</p>
-    <p>{{ hike()?.datumuitvoering}}</p>
+        @for (route of hike.routes; track route)  {
+            <img src="{{ route }}" alt="Route Picture" style="max-width: 100%; height: auto;">
+        }    
 
-    @for (picture of hike()?.pictures; track picture)  {
-        <img src="{{ picture }}" alt="Route Picture" style="max-width: 100%; height: auto;">
+        <p>{{ hike.beschrijving}}</p>
+        <p>{{ hike.datumuitvoering}}</p>
+
+        @for (picture of hike.pictures; track picture)  {
+            <img src="{{ picture }}" alt="Route Picture" style="max-width: 100%; height: auto;">
+        }
     }
 </div>
 

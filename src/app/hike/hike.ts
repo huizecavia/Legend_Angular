@@ -12,6 +12,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class Hike {
 
   hike = signal<HikeModel | undefined>(undefined);
+  hikes = signal<HikeModel[]>([]);
   private httpClient = inject(HttpClient);
   private destroyRef = inject(DestroyRef)
 
@@ -19,6 +20,7 @@ export class Hike {
     const subscription = this.httpClient.get<HikeModel[]>('http://localhost:8080/hikes').subscribe({
       next: (resData) => {
         this.hike.set(resData[0]);
+        this.hikes.set(resData);
       }
     });
 
