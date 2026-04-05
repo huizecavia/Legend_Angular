@@ -16,9 +16,9 @@ export class Hike {
   private destroyRef = inject(DestroyRef)
 
   ngOnInit() {
-    const subscription = this.httpClient.get<HikeModel>('http://localhost:8080/hike').subscribe({
+    const subscription = this.httpClient.get<HikeModel[]>('http://localhost:8080/hikes').subscribe({
       next: (resData) => {
-        this.hike.set(resData);
+        this.hike.set(resData[0]);
       }
     });
 
