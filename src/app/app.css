@@ -1,0 +1,12 @@
+.app-container {
+  display: flex;
+  gap: 20px;
+}
+
+app-hikelist {
+  flex: 1;
+}
+
+app-hike {
+  flex: 1;
+}

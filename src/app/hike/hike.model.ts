@@ -1,5 +1,3 @@
-import { Document } from '@contentful/rich-text-types';
-
 export interface HikeModel {
       titel: string;
       routes: string[];
