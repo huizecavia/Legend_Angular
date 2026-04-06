@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal, output, OnInit } from '@angular/core';
 import { HikeModel } from '../hike/hike.model';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,10 +9,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './hikelist.css',
 })
 
-export class Hikelist {
+export class Hikelist implements OnInit {
   hikes = signal<HikeModel[]>([]);
   private httpClient = inject(HttpClient);
   private destroyRef = inject(DestroyRef)
+
+  hikeSelected = output<HikeModel>();
 
   ngOnInit() {
     const subscription = this.httpClient.get<HikeModel[]>('http://localhost:8080/hikes').subscribe({
@@ -25,5 +27,9 @@ export class Hikelist {
 
     })
 
+  }
+
+  onHikeClick(hike: HikeModel) {
+    this.hikeSelected.emit(hike);
   }
 }

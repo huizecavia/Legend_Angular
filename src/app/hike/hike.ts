@@ -1,31 +1,16 @@
-import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HikeModel } from './hike.model';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-hike',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './hike.html',
   styleUrl: './hike.css',
 })
 export class Hike {
 
-  hike = signal<HikeModel | undefined>(undefined);
-  private httpClient = inject(HttpClient);
-  private destroyRef = inject(DestroyRef)
-
-  ngOnInit() {
-    const subscription = this.httpClient.get<HikeModel[]>('http://localhost:8080/hikes').subscribe({
-      next: (resData) => {
-        this.hike.set(resData[0]);
-      }
-    });
-
-    this.destroyRef.onDestroy(() => {
-
-    })
-
-  }
+  hike = input<HikeModel>();
 
 }
 

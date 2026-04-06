@@ -1,17 +1,19 @@
 <p>Here comes the hike!</p>
 
+<ng-container *ngIf="hike() as selectedHike">
 <div>
-        <p>{{ hike()?.titel}}</p>
+        <p>{{ selectedHike.titel}}</p>
 
-        @for (route of hike()?.routes; track route)  {
+        @for (route of selectedHike.routes; track route)  {
             <img src="{{ route }}" alt="Route Picture" style="max-width: 100%; height: auto;">
         }    
 
-        <p>{{ hike()?.beschrijving}}</p>
-        <p>{{ hike()?.datumuitvoering}}</p>
+        <p>{{ selectedHike.beschrijving}}</p>
+        <p>{{ selectedHike.datumuitvoering}}</p>
 
-        @for (picture of hike()?.pictures; track picture)  {
+        @for (picture of selectedHike.pictures; track picture)  {
             <img src="{{ picture }}" alt="Route Picture" style="max-width: 100%; height: auto;">
         }
 </div>
+</ng-container>
 

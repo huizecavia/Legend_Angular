@@ -1,5 +1,5 @@
 <H1>Let's hike</H1>
 <div class="app-container">
-  <app-hikelist />
-  <app-hike />
+  <app-hikelist (hikeSelected)="onHikeSelected($event)" />
+  <app-hike [hike]="selectedHike()" />
 </div>

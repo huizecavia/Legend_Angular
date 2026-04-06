@@ -1,6 +1,6 @@
 <div>
     @for (hike of hikes(); track hike)  {
-        <p>{{ hike.titel}} :  {{ hike.beschrijving}}</p>
+        <p (click)="onHikeClick(hike)" style="cursor: pointer;">{{ hike.titel}} :  {{ hike.beschrijving}}</p>
     }
 </div>
 
